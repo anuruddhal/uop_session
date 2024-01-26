@@ -14,7 +14,7 @@ npm start
 ### Build Docker Image
 
 ```
-docker build -f Dockerfile -t ballerina/forum:1.0.0 .
+docker build -f Dockerfile -t anuruddhal/forum:1.0.0 .
 ```
 
 ### View Docker Images
@@ -25,7 +25,7 @@ docker images
 ### Run Docker Image
 
 ```
-docker run -d -p 3000:3000  ballerina/forum:1.0.0
+docker run -d -p 3000:3000  anuruddhal/forum:1.0.0
 ```
 
 ### View Docker Process

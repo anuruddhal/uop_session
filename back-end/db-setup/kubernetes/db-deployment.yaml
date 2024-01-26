@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: forum-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: forum-db
+  template:
+    metadata:
+      labels:
+        app: forum-db
+    spec:
+      containers:
+        - name: mysql-container
+          image: anuruddhal/mysql-forum-db:1.0.0
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - name: mysql-data
+              mountPath: /var/lib/mysql
+      volumes:
+        - name: mysql-data
+          emptyDir: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: forum-db-svc
+spec:
+  selector:
+    app: forum-db
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306
+  type: ClusterIP

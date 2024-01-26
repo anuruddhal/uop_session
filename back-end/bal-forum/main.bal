@@ -1,6 +1,6 @@
 import ballerina/http;
-import ballerina/uuid;
 import ballerina/log;
+import ballerina/uuid;
 
 @http:ServiceConfig {
     cors: {

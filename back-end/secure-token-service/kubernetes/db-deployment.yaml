@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sts-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sts-app
+  template:
+    metadata:
+      labels:
+        app: sts-app
+    spec:
+      containers:
+        - name: sts-container
+          image: ldclakmal/ballerina-sts:latest
+          ports:
+            - containerPort: 9445
+          volumeMounts:
+            - name: mysql-data
+              mountPath: /var/lib/mysql
+      volumes:
+        - name: mysql-data
+          emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sts-svc
+spec:
+  selector:
+    app: sts-app
+  ports:
+    - protocol: TCP
+      port: 9445
+      targetPort: 9445
+  type: ClusterIP
