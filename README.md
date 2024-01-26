@@ -56,7 +56,7 @@ Following is the entity relationship diagram:
 
 ![Entity Relationship Diagram](images/bal-forum-erd.png)
 
-## Task 5 - Deploy and test the services using Docker
+## Task - Deploy and test the services using Docker and Kubernetes
 
 Build the docker images for the `bal-forum` and the `sentiment-api` services and run them using docker compose. The docker compose file is available in the `backend` directory.
 
