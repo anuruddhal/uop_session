@@ -18,7 +18,7 @@ const Home = () => {
 			if (!localStorage.getItem("_id")) {
 				navigate("/");
 			} else {
-				fetch("http://localhost:4000/api/posts")
+				fetch("http://api.forum.ballerina.io/api/posts")
 					.then((res) => {
 						if (res.status === 200) {
 							return res.json();
@@ -51,7 +51,7 @@ const Home = () => {
 	return (
 		<div>
 			<Nav />
-			{notify && <Notification message={message} handle={handleNotification} error={error}/>}
+			{notify && <Notification message={message} handle={handleNotification} error={error} />}
 			<div style={{ padding: 80 }}>
 				<Grid container spacing={3} direction="column" alignItems="center" justify="center">
 					{postList.map((post) => (

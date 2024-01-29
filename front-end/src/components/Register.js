@@ -26,7 +26,7 @@ const Register = () => {
 	const [message, setMessage] = useState("");
 
 	const signUp = () => {
-		fetch("http://localhost:4000/api/users", {
+		fetch("http://api.forum.ballerina.io/api/users", {
 			method: "POST",
 			body: JSON.stringify({
 				email,

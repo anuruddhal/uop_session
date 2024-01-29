@@ -17,7 +17,7 @@ const Comments = () => {
 	const { id } = useParams();
 
 	const addComment = () => {
-		fetch("http://localhost:4000/api/posts/" + id + "/comments", {
+		fetch("http://api.forum.ballerina.io/api/posts/" + id + "/comments", {
 			method: "POST",
 			body: JSON.stringify({
 				userId: localStorage.getItem("_id"),
@@ -62,7 +62,7 @@ const Comments = () => {
 
 	useEffect(() => {
 		const fetchComments = () => {
-			fetch("http://localhost:4000/api/posts/" + id, {
+			fetch("http://api.forum.ballerina.io/api/posts/" + id, {
 				method: "GET"
 			})
 				.then((res) => {

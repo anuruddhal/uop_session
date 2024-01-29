@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from "react";
-import {useNavigate} from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Nav from "./PostsNav";
 import Notification from "./Notification";
-import {LineWave} from 'react-loader-spinner';
+import { LineWave } from 'react-loader-spinner';
 
 const Posts = () => {
     const [title, setTitle] = useState("");
@@ -24,7 +24,7 @@ const Posts = () => {
     }, [navigate]);
 
     const createPost = () => {
-        let url = "http://localhost:4000/api/users/" + localStorage.getItem("_id") + "/posts";
+        let url = "http://api.forum.ballerina.io/api/users/" + localStorage.getItem("_id") + "/posts";
         fetch(url, {
             method: "POST",
             body: JSON.stringify({

@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: forum-app-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: forum.ballerina.io
+      http:
+        paths:
+          - backend:
+              service:
+                name: forum-ui-svc
+                port:
+                  number: 3000
+            path: /
+            pathType: Prefix

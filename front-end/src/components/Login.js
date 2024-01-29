@@ -25,7 +25,7 @@ const Login = () => {
 	const [message, setMessage] = useState("");
 
 	const loginUser = () => {
-		fetch("http://localhost:4000/api/login", {
+		fetch("http://api.forum.ballerina.io/api/login", {
 			method: "POST",
 			body: JSON.stringify({
 				"name": username,

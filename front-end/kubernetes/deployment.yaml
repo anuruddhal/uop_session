@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: forum-ui-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: forum-ui-app
+  template:
+    metadata:
+      labels:
+        app: forum-ui-app
+    spec:
+      containers:
+        - name: forum-ui-container
+          image: anuruddhal/forum:1.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000

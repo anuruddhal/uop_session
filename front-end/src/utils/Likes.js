@@ -1,4 +1,4 @@
-import {Button} from "@mui/material";
+import { Button } from "@mui/material";
 import React from "react";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Notification from "../components/Notification";
@@ -9,7 +9,7 @@ const Likes = ({ numberOfLikes, postId }) => {
 	const [error, setError] = React.useState(false);
 	const [likes, setLikes] = React.useState(numberOfLikes);
 	const handleLikeFunction = () => {
-		fetch("http://localhost:4000/api/posts/" + postId + "/likes", {
+		fetch("http://api.forum.ballerina.io/api/posts/" + postId + "/likes", {
 			method: "POST",
 			body: JSON.stringify({
 				userId: localStorage.getItem("_id"),
@@ -51,7 +51,7 @@ const Likes = ({ numberOfLikes, postId }) => {
 	return (
 		<div>
 			{notify && <Notification message={message} error={error} handle={handleNotification} />}
-			<Button startIcon={<FavoriteIcon/>} onClick={handleLikeFunction} sx={{color: "#20b6b0"}}>{likes}</Button>
+			<Button startIcon={<FavoriteIcon />} onClick={handleLikeFunction} sx={{ color: "#20b6b0" }}>{likes}</Button>
 		</div>
 	);
 };

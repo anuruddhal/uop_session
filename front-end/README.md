@@ -52,3 +52,13 @@ docker rmi ballerina/forum:1.0.0
 ```
 docker system prune -f
 ```
+
+## Run in Kubernetes
+
+### Deploy nginx controller
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.1.2/deploy/static/provider/cloud/deploy.yaml
+```
+
+### Deploy ingress
+curl http://api.forum.ballerina.io/api/posts
