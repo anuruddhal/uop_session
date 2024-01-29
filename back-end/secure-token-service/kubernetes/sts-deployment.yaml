@@ -16,13 +16,7 @@ spec:
         - name: sts-container
           image: ldclakmal/ballerina-sts:latest
           ports:
-            - containerPort: 9445
-          volumeMounts:
-            - name: mysql-data
-              mountPath: /var/lib/mysql
-      volumes:
-        - name: mysql-data
-          emptyDir: {}
+            - containerPort: 9444
 ---
 apiVersion: v1
 kind: Service
@@ -33,6 +27,6 @@ spec:
     app: sts-app
   ports:
     - protocol: TCP
-      port: 9445
-      targetPort: 9445
+      port: 9444
+      targetPort: 9444
   type: ClusterIP

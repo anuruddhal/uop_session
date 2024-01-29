@@ -26,11 +26,8 @@ type SentimentClientConfig record {|
 
 final http:Client sentimentClient = check new (sentimentClientConfig.clientUrl,
     secureSocket = {
-        cert: "resources/server_public.crt",
-        'key: {
-            certFile: "resources/client_public.crt",
-            keyFile: "resources/client_private.key"
-        }
+        cert: "resources/public/server_public.crt",
+        verifyHostName: false
     },
     auth = {
         refreshUrl: sentimentClientConfig.refreshUrl,
