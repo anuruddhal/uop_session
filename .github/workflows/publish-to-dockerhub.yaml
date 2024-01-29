@@ -46,4 +46,14 @@ jobs:
             args:
               build   
       - name: Push Forum API to Docker Hub
-        run: docker push anuruddhal/bal-forum:1.0.0
+        run: docker push anuruddhal/bal-forum:1.0.0   
+      - name: Build Sentiment API
+        uses: ballerina-platform/ballerina-action@2201.8.4
+        env:
+            DOCKER_BUILDKIT: 0
+            WORKING_DIR: ./back-end/sentiment-api
+        with:
+            args:
+              build   
+      - name: Push Sentiment API to Docker Hub
+        run: docker push anuruddhal/sentiment-api:1.0.0  
