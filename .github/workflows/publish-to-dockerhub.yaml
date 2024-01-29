@@ -3,7 +3,7 @@ name: Push Docker Images to Docker Hub
 on:
     push:
       branches:
-        - master
+        - main
     workflow_dispatch:
 
 jobs:
