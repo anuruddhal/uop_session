@@ -6,3 +6,5 @@ distribution = "2201.8.4"
 
 [build-options]
 observabilityIncluded = true
+# Enable building the docker image
+cloud="docker"

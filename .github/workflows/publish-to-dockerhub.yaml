@@ -37,3 +37,13 @@ jobs:
             platforms: linux/amd64,linux/arm64
             push: true
             tags: anuruddhal/forum:latest,anuruddhal/forum:1.0.0   
+      - name: Build Forum API
+        uses: ballerina-platform/ballerina-action@2201.8.4
+        env:
+            DOCKER_BUILDKIT: 0
+            WORKING_DIR: ./back-end/bal-forum
+        with:
+            args:
+              build   
+      - name: Push Forum API to Docker Hub
+        run: docker push anuruddhal/bal-forum:1.0.0
