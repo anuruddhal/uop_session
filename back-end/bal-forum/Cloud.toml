@@ -9,4 +9,4 @@ target="resources"
 
 [[cloud.config.files]]
 file="Config.toml"
-
+name="bal-forum-config"

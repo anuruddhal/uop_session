@@ -8,6 +8,7 @@ internal_domain_name="sentiment-api-svc"
 
 [[cloud.config.files]]
 file="Config.toml"
+name="sentiment-api-config"
 
 [[container.copy.files]]
 sourceFile="resources"
