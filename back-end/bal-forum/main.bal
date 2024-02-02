@@ -61,7 +61,7 @@ service /api on new http:Listener(4000) {
 
     resource function post users/[string id]/posts(NewForumPost newPost) returns PostCreated|UserNotFound|PostForbidden|error {
         string|error userId = forumDBClient->queryRow(`SELECT id FROM users WHERE id = ${id}`);
-
+        log:printInfo("Creating a new post");
         if userId is error {
             return <UserNotFound>{
                 body: {
