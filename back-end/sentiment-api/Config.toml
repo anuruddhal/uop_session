@@ -1,0 +1,1 @@
+oauth2IntrospectionUrl = "http://sts-svc:9444/oauth2/introspect"
