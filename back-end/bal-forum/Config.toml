@@ -1,0 +1,13 @@
+[sentimentClientConfig]
+clientUrl = "https://sentiment-api-svc:9000/text-processing"
+refreshUrl = "http://sts-svc:9444/oauth2/token"
+refreshToken = "24f19603-8565-4b5f-a036-88a945e1f272"
+clientId = "FlfJYKBD2c925h4lkycqNZlC2l4a"
+clientSecret = "PJz0UhTJMrHOo68QQNpvnqAY_3Aa"
+
+[dbConfig]
+host = "forum-db-svc"
+user = "forum_user"
+password = "dummypassword"
+database = "forum_database"
+port = 3306
